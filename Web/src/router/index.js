@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Login from '@/views/login'
 import Home from '@/views/home'
 import Lists from '@/views/lists'
 import Charts from '@/views/charts'
@@ -13,6 +14,10 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home
+    }, {
+      path: '/login',
+      name: 'login',
+      component: Login
     }, {
       path: '/lists',
       name: 'lists',
