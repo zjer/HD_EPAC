@@ -1,6 +1,6 @@
 <template>
   <div>
-    <head-top :topTitle="headerTitle" :showArrow="show"></head-top>
+    <head-top :topTitle="headerTitle" :showArrow="showArrow"></head-top>
     <foot-nav :currentIndex="active"></foot-nav>
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {
     return {
       headerTitle: 'list',
       active: 1,
-      show: true
+      showArrow: false
     }
   }
 }
