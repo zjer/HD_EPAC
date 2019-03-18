@@ -1,4 +1,4 @@
 import fetch from '@/config/fetch'
 
-// 获取Token返回信息
-export const GetAccesstoken = data => fetch('api/Suggestion/GetAccesstoken)', data, 'POST')
+// 用户登录
+export const login = data => fetch('login', data, 'POST')
