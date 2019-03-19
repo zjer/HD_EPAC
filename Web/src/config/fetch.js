@@ -1,16 +1,16 @@
 import { baseUrl, logoutUrl } from './env'
 
 export default async (url = '', data = {}, type = 'GET', method = 'fetch') => {
-  type = type.toUpperCase()
-  url = baseUrl + url
+  type = type.toUpperCase();
+  url = baseUrl + url;
   if (type === 'GET') {
-    let dataStr = ''/* 数据拼接字符串 */
+    let dataStr = '';/* 数据拼接字符串 */
     Object.keys(data).forEach(key => {
-      dataStr += key + '=' + data[key] + '&'
-    })
+      dataStr += key + '=' + data[key] + '&';
+    });
     if (dataStr !== '') {
-      dataStr = dataStr.substr(0, dataStr.lastIndexOf('&'))
-      url = url + '?' + dataStr
+      dataStr = dataStr.substr(0, dataStr.lastIndexOf('&'));
+      url = url + '?' + dataStr;
     }
   }
   if (window.fetch && method === 'fetch') {
@@ -24,49 +24,49 @@ export default async (url = '', data = {}, type = 'GET', method = 'fetch') => {
       },
       mode: 'cors',
       cache: 'no-cache'
-    }
+    };
     if (type === 'POST') {
       Object.defineProperty(requestConfig, 'body', {
         value: JSON.stringify(data)
       })
     } try {
-      const response = await fetch(url, requestConfig)
-      const responseJson = await response.json()
+      const response = await fetch(url, requestConfig);
+      const responseJson = await response.json();
       // console.log("response ",responseJson)
       // token失效跳转到登录页
       if (responseJson.Result === '已拒绝为此请求授权。' && responseJson.Message === 404) {
-        console.log('tocken过期了，重新登录...')
-        window.location.href = logoutUrl
-      } return responseJson
+        console.log('tocken过期了，重新登录...');
+        window.location.href = logoutUrl;
+      } return responseJson;
     } catch (error) {
-      throw new Error(error)
+      throw new Error(error);
     }
   } else {
     return new Promise((resolve, reject) => {
-      let requestObj
+      let requestObj;
       if (window.XMLHttpRequest) {
-        requestObj = new XMLHttpRequest()
+        requestObj = new XMLHttpRequest();
       } else {
-        requestObj = new ActiveXObject
+        requestObj = new ActiveXObject('Microsoft.XMLHTTP');
       }
-      let sendData = ''
+      let sendData = '';
       if (type === 'POST') {
-        sendData = JSON.stringify(data)
+        sendData = JSON.stringify(data);
       }
-      requestObj.open(type, url, true)
-      requestObj.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
-      requestObj.setRequestHeader('Authorization', 'Bearer ' + sessionStorage.getItem('token'))
-      requestObj.send(sendData)
+      requestObj.open(type, url, true);
+      requestObj.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+      requestObj.setRequestHeader('Authorization', 'Bearer ' + sessionStorage.getItem('token'));
+      requestObj.send(sendData);
       requestObj.onreadystatechange = () => {
         if (requestObj.readyState === 4) {
           if (requestObj.status === 200) {
-            let obj = requestObj.response
+            let obj = requestObj.response;
             if (typeof obj !== 'object') {
-              obj = JSON.parse(obj)
+              obj = JSON.parse(obj);
             }
-            resolve(obj)
+            resolve(obj);
           } else {
-            reject(requestObj)
+            reject(requestObj);
           }
         }
       }

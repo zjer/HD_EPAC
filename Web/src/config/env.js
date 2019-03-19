@@ -6,17 +6,17 @@
  * baseImgPath: 图片存放地址
  *
  */
-let baseUrl = ''
-let baseImgPath
-let logoutUrl
+let baseUrl = '';
+let baseImgPath;
+let logoutUrl;
 
 if (process.env.NODE_ENV === 'development') {
-  baseUrl = 'http://localhost:81'
-  baseImgPath = 'http://localhost:81/img/'
+  baseUrl = 'http://localhost:81';
+  baseImgPath = 'http://localhost:81/img/';
   logoutUrl = '/'
 } else {
-  baseUrl = 'http://localhost:81'
-  baseImgPath = 'http://localhost:81/img/'
+  baseUrl = 'http://localhost:81';
+  baseImgPath = 'http://localhost:81/img/';
   logoutUrl = '/'
 }
 
