@@ -6,20 +6,20 @@
 </template>
 
 <script>
-import HeadTop from '../components/headTop'
-import FootNav from '../components/footNav'
+  import HeadTop from '../components/headTop'
+  import FootNav from '../components/footNav'
 
-export default {
-  name: 'charts',
-  components: {FootNav, HeadTop},
-  data () {
-    return {
-      headerTitle: 'charts',
-      active: 2,
-      showArrow: false
+  export default {
+    name: 'charts',
+    components: {FootNav, HeadTop},
+    data () {
+      return {
+        headerTitle: 'charts',
+        active: 2,
+        showArrow: false
+      }
     }
   }
-}
 </script>
 
 <style scoped>

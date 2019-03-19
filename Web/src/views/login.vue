@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { getCompany } from '@/api/api.js'
+// import { getCompany } from '@/api/api.js'
 export default {
   name: 'login',
   data () {
@@ -23,7 +23,7 @@ export default {
     }
   },
   methods: {
-    async login () {
+    /*async login () {
       let result = await getCompany({});
       if (result.success) {
         console.log(result.rows)
@@ -31,7 +31,7 @@ export default {
     },
     dologin () {
       this.login()
-    }
+    }*/
   }
 }
 </script>

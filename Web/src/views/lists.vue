@@ -6,20 +6,20 @@
 </template>
 
 <script>
-import HeadTop from '../components/headTop'
-import FootNav from '../components/footNav'
+  import HeadTop from '../components/headTop'
+  import FootNav from '../components/footNav'
 
-export default {
-  name: 'lists',
-  components: {FootNav, HeadTop},
-  data () {
-    return {
-      headerTitle: 'list',
-      active: 1,
-      showArrow: false
+  export default {
+    name: 'lists',
+    components: {FootNav, HeadTop},
+    data () {
+      return {
+        headerTitle: 'list',
+        active: 1,
+        showArrow: false
+      }
     }
   }
-}
 </script>
 
 <style scoped>

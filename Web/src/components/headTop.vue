@@ -3,10 +3,10 @@
 </template>
 
 <script>
-export default {
-  name: 'headTop',
-  props: ['topTitle', 'showArrow']
-}
+  export default {
+    name: 'headTop',
+    props: ['topTitle', 'showArrow']
+  }
 </script>
 
 <style scoped>
