@@ -1,4 +1,4 @@
-# hd-epac
+# epac
 
 > A Vue.js project
 

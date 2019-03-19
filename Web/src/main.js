@@ -8,12 +8,12 @@ import 'vant/lib/index.css'
 import echarts from 'echarts'
 import axios from 'axios'
 
-Vue.use(Vant)
+Vue.use(Vant);
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
-Vue.prototype.$echarts = echarts
-Vue.prototype.$http = axios
+Vue.prototype.$echarts = echarts;
+Vue.prototype.$http = axios;
 
 /* eslint-disable no-new */
 new Vue({

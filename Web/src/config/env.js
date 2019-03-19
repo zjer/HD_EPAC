@@ -11,11 +11,11 @@ let baseImgPath
 let logoutUrl
 
 if (process.env.NODE_ENV === 'development') {
-  baseUrl = 'http://localhost:81/'
+  baseUrl = 'http://localhost:81'
   baseImgPath = 'http://localhost:81/img/'
   logoutUrl = '/'
 } else {
-  baseUrl = 'http://localhost:81/'
+  baseUrl = 'http://localhost:81'
   baseImgPath = 'http://localhost:81/img/'
   logoutUrl = '/'
 }
