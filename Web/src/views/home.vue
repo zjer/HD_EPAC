@@ -1,24 +1,31 @@
 <template>
   <div>
     <head-top :topTitle="headerTitle" :showArrow="showArrow"></head-top>
-    <weather></weather>
     <foot-nav :currentIndex="active"></foot-nav>
+    <guide v-show="showGuide"></guide>
   </div>
 </template>
 
 <script>
-  import HeadTop from '../components/headTop'
-  import FootNav from '../components/footNav'
-  import Weather from "../components/weather";
+  import { getLocal } from "../config/mUtils";
+  import HeadTop from '../components/headTop';
+  import FootNav from '../components/footNav';
+  import Guide from "./guide";
 
   export default {
     name: 'home',
-    components: {Weather, FootNav, HeadTop},
+    components: {Guide, FootNav, HeadTop},
     data () {
       return {
         headerTitle: 'home',
         active: 0,
-        showArrow: false
+        showArrow: false,
+        showGuide: false
+      }
+    },
+    created() {
+      if (!getLocal('guide')) {
+        this.showGuide = true;
       }
     }
   }
