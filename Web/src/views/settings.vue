@@ -11,10 +11,10 @@ import FootNav from '../components/footNav';
 
 export default {
   name: 'settings',
-  components: {FootNav, HeadTop},
+  components: { FootNav, HeadTop },
   data () {
     return {
-      headerTitle: 'settings',
+      headerTitle: this.$t('setting'),
       active: 3,
       showArrow: false
     }

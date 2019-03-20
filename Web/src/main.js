@@ -6,6 +6,7 @@ import router from './router'
 import Vant from 'vant'
 import 'vant/lib/index.css'
 import echarts from 'echarts'
+import i18n from './i18n/i18n'
 
 Vue.use(Vant);
 
@@ -17,6 +18,7 @@ Vue.prototype.$echarts = echarts;
 new Vue({
   el: '#app',
   router,
+  i18n,
   components: { App },
   template: '<App/>'
 })

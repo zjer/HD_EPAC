@@ -14,10 +14,10 @@
 
   export default {
     name: 'home',
-    components: {Guide, FootNav, HeadTop},
+    components: { Guide, FootNav, HeadTop },
     data () {
       return {
-        headerTitle: 'home',
+        headerTitle: this.$t('home'),
         active: 0,
         showArrow: false,
         showGuide: false

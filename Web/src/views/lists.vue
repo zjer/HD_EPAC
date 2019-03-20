@@ -11,10 +11,10 @@
 
   export default {
     name: 'lists',
-    components: {FootNav, HeadTop},
+    components: { FootNav, HeadTop },
     data () {
       return {
-        headerTitle: 'list',
+        headerTitle: this.$t('list'),
         active: 1,
         showArrow: false
       }

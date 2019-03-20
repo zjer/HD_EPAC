@@ -11,10 +11,10 @@
 
   export default {
     name: 'charts',
-    components: {FootNav, HeadTop},
+    components: { FootNav, HeadTop },
     data () {
       return {
-        headerTitle: 'charts',
+        headerTitle: this.$t('chart'),
         active: 2,
         showArrow: false
       }
