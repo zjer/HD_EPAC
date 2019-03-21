@@ -7,6 +7,7 @@ import Vant from 'vant'
 import 'vant/lib/index.css'
 import echarts from 'echarts'
 import i18n from './i18n/i18n'
+import store from './store'
 
 Vue.use(Vant);
 
@@ -19,6 +20,7 @@ new Vue({
   el: '#app',
   router,
   i18n,
+  store,
   components: { App },
   template: '<App/>'
 })

@@ -14,7 +14,6 @@ module.exports =  {
   wuXi: 'Wu Xi',
   changZhou: 'Chang Zhou',
   nanTong: 'Nan Tong',
-  swipe: 'Swipe',
   weather: 'Weather',
   news: 'News',
 }

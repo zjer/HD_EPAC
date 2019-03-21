@@ -11,5 +11,6 @@ const messages = {
 
 export default new VueI18n({
   locale : getLocal('lang') || 'zh_CN',
-  messages : messages
+  messages : messages,
+  silentTranslationWarn: true
 })

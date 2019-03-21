@@ -14,7 +14,6 @@ module.exports =  {
   wuXi: '无锡',
   changZhou: '常州',
   nanTong: '南通',
-  swipe: '轮播图',
   weather: '天气',
   news: '新闻',
 }
