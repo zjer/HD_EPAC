@@ -1,48 +1,51 @@
 package com.hd.epac.util;
 
-import java.util.List;
-
-/**
- * @program: epac
- * @description: 通用返回实例
- * @author: Mr.Shi
- * @create: 2019-03-19 00:42
- **/
 public class ResultUtil {
-    private int code;
-    private String msg;
-    private List<?> list;
-    private Object object;
+    /// <summary>
+    /// 操作结果类型
+    /// </summary>
+    public Object state;
+    /// <summary>
+    /// 获取 消息内容
+    public String message;
+    /// <summary>
+    /// 获取 返回数据
+    /// </summary>
+    public Object data;
 
-    public int getCode() {
-        return code;
+    public Object getState() {
+        return state;
     }
 
-    public void setCode(int code) {
-        this.code = code;
+    public void setState(Object state) {
+        this.state = state;
     }
 
-    public String getMsg() {
-        return msg;
+    public String getMessage() {
+        return message;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
-    public List<?> getList() {
-        return list;
+    public Object getData() {
+        return data;
     }
 
-    public void setList(List<?> list) {
-        this.list = list;
+    public void setData(Object data) {
+        this.data = data;
     }
-
-    public Object getObject() {
-        return object;
+    public static ResultUtil success(String msg){
+        ResultUtil resultUtil = new ResultUtil();
+        resultUtil.setMessage(msg);
+        resultUtil.state = "success";
+        return resultUtil;
     }
-
-    public void setObject(Object object) {
-        this.object = object;
+    public static ResultUtil error(String msg){
+        ResultUtil resultUtil = new ResultUtil();
+        resultUtil.setMessage(msg);
+        resultUtil.state = "error";
+        return resultUtil;
     }
 }
