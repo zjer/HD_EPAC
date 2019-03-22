@@ -42,8 +42,9 @@
                 v-for="(item, index) in moduleLists"
                 clickable
                 :key="index"
-                :title="item.text">
-                <van-checkbox :name="item.code" />
+                :title="item.text"
+                @click="toggle(index)">
+                <van-checkbox :name="item.code" ref="checkboxes" />
               </van-cell>
             </van-cell-group>
           </van-checkbox-group>
@@ -100,6 +101,9 @@
         this.$i18n.locale = this.langRadio;
         setLocal('lang', this.langRadio);
         setLocal('city', this.cityRadio);
+      },
+      toggle(index) {
+        this.$refs.checkboxes[index].toggle();
       },
       getModules(val) {
         console.log(val);
