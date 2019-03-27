@@ -98,9 +98,6 @@
       },
       nextStep() {
         this.step = ++this.step % 3;
-        this.$i18n.locale = this.langRadio;
-        setLocal('lang', this.langRadio);
-        setLocal('city', this.cityRadio);
       },
       toggle(index) {
         this.$refs.checkboxes[index].toggle();
@@ -114,6 +111,9 @@
       },
       complete() {
         console.log(this.showModules);
+        this.$i18n.locale = this.langRadio;
+        setLocal('lang', this.langRadio);
+        setLocal('city', this.cityRadio);
         this.$store.commit('setGuide', false);
         this.showModules.forEach(item => {
           this.$store.commit(item, true);

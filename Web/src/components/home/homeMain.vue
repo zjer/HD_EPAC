@@ -6,7 +6,6 @@
 </template>
 
 <script>
-  import { getLocal } from "../../config/mUtils";
   import Weather from "./weather";
   import News from "./news";
 
